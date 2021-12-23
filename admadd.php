@@ -1,6 +1,5 @@
 <?php
 require_once('includes/conn.php');
-require("includes/variables.php");
 $uname = $_COOKIE['uname'];
 $authcheck = "SELECT * FROM Users WHERE username = '$uname'";
 $confm = $conn->query($authcheck);
@@ -8,6 +7,7 @@ $row = $confm->fetch_assoc();
 if ($row['status']){
     header("Location: /?message=You do not have the necesarry privilages. Note this incident has been LOGED!!!");
 }
+require_once('includes/userdata.php');
 require_once('includes/header.php');
 require_once('includes/messages.php');
 
@@ -34,17 +34,17 @@ require_once('includes/messages.php');
             <label for="name">Name</label>
             <input type="text" name="name">
             <label for="file">image</label>
-            <input type="file" name="file" id="" accept=".jpg,.jpeg.png">
+            <input type="file" name="file" id="" accept=".jpg,.jpeg,.png">
             <label for="price">price</label>
             <input type="text" style="width:6em" name="price">
             <label for="barcode">Barcode</label>
             <input type="text" style="width:8em" name="barcode"><br>
             <label for="description">Description</label>
-            <textarea name="desc" id="" cols="35" rows="3"></textarea><br>
+            <textarea name="description" id="" cols="35" rows="3"></textarea><br>
             <label for="name">Availability</label>
             <select name="avail" id="">
-                <option value="true">true</option>
-                <option value="false">false</option>
+                <option value="1">True</option>
+                <option value="0">False</option>
             </select><br>
             <label for="name">Category</label>
             <input type="text" name="category">

@@ -12,6 +12,7 @@ if ($logstat != md5("true")){
 if ($row['status']){
     header("Location: /?message=You do not have the necesarry privilages. Note this incident has been LOGED!!!");
 }
+require_once('includes/userdata.php');
 require_once('includes/header.php');
 require_once('includes/messages.php');
 

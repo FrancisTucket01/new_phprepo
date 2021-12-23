@@ -5,18 +5,17 @@ if ( isset($_COOKIE['status'])){
     if ($status == md5("true")){
         header("Location: /?message=You are already loged in");
     }
-}else{
-    setcookie("status", md5("false"), time()+3600, "/","", 0);
 }
 
+require('includes/userdata.php');
+require("includes/header.php");
 ?>
-<?php require("includes/header.php"); ?>
         <div class="home">
-            <div class="container">
+            <div class="form-container">
                 <form action="auth.php" class="loreg" method="post">
                     <?php require("includes/errors.php"); ?>
                     <div class="form">
-                        <img src="/Images/logo5.png" alt="logo">
+                        <img src="/Images/keyboard.jpg" alt="logo">
                         <h2>
                             Please Enter Your credentials to continue
                         </h2>
@@ -36,5 +35,5 @@ if ( isset($_COOKIE['status'])){
                     </div>
                 </form>
             </div>
-        </div>
+        </div><br><br><br><br><br>
         <?php require("includes/footer.php"); ?>

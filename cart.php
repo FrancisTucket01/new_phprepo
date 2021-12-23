@@ -1,7 +1,7 @@
 <?php
 
 if ($_COOKIE["status"] != md5("true")){
-    header("Location: /login.php?error=You Must Be loged in to access the Profile page");
+    header("Location: /login.php?error=You Must Be loged in to access the Cart page");
   }
 
 require("includes/conn.php");
@@ -25,11 +25,10 @@ while($new_data = $data2->fetch_assoc()){
     $tcount += 1;
 }
 
+require_once('includes/userdata.php');
+require("includes/header.php");
+require("includes/messages.php");
 ?>
-
-       
-<?php require("includes/header.php"); ?>
-<?php require("includes/messages.php"); ?>
         <div class="content">
             <div class="prod">
             <?php
@@ -80,8 +79,8 @@ while($new_data = $data2->fetch_assoc()){
             </div>
             <div class="cart-side">
                 <span>Number of items : <?php echo "<strong>$tcount</strong>"; ?></span>
-                <span>Total price : <?php echo "<strong>$tprice</strong>"; ?></span>
-                <span><a href="/purchase.php?price=$tprice">Purchase all</a></span>
+                <span>Total price :USD <?php echo "<strong>$tprice</strong>"; ?></span>
+                <span><a href="/purchase.php?query=all&uname=<?php echo $uname; ?>">Purchase all</a></span>
             </div>
         </div>
         <?php require("includes/footer.php"); ?>

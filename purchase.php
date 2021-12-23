@@ -1,7 +1,15 @@
 <?php
 
 require("includes/conn.php");
-
+if(isset($_REQUEST['query'])){
+    if ($_REQUEST['query'] == "all"){
+        $uname = $_REQUEST['uname'];
+        $prodcheck = "DELETE FROM items WHERE username = '$uname'";
+        $get = $conn->query($prodcheck);
+        echo "Query Success";
+        header("Location: /cart.php?message=Items purchased successfully");
+    }
+}
 $username = $_COOKIE['uname'];
 $authcheck = "SELECT * FROM Users WHERE username = '$username'";
 $confm = $conn->query($authcheck);
@@ -26,7 +34,7 @@ if ($result == True){
     $prodcheck = "DELETE FROM items WHERE barcode = '$prodcode'";
     $get = $conn->query($prodcheck);
     echo "Query Success";
-    header("Location: /cart.php?message=Item purchasedd successfully");
+    header("Location: /cart.php?message=Item purchased successfully");
 }else{
     echo "Failed To Execute query";
 }

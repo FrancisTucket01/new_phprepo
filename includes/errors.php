@@ -1,5 +1,8 @@
 <?php
-    if ($_GET['error'] == ""){
+    if (isset($_GET['error'])){
+        $message =  $_GET['error'];
+        $display = "flex";
+    }else{
         $display = "none";
     }
     

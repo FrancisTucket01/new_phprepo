@@ -1,7 +1,6 @@
 <?php
 
 require("includes/conn.php");
-require("includes/variables.php");
 $code = $_GET['code'];
 
 $smt = "SELECT * FROM products WHERE barcode='$code'";
@@ -14,7 +13,7 @@ $pdesc = $row['description'];
 $pbarcode = $row['barcode'];
 $pimg = "$pbarcode". ".jpg";
 $pavail = $row['availability'] ; 
-
+require('includes/userdata.php'); 
 require("includes/header.php");
 require('includes/messages.php');
 echo "

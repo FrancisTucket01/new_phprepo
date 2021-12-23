@@ -6,19 +6,18 @@ if ( isset($_COOKIE['status'])){
         header("Location: /?message=You are already loged in");
     }
     
-}else{
-    setcookie("status", "false", time()+3600, "/","", 0);
 }
+require('includes/userdata.php');
+require("includes/header.php");
 ?>
-<?php require("includes/header.php"); ?>
         <div class="home">
-            <div class="container">
+            <div class="form-container">
 
                 <form action="register.php" class="loreg" method="post">
                     <div class="form">
 
                         <?php require("includes/errors.php"); ?>
-                        <img src="/Images/logo5.png" alt="logo">
+                        <img src="/Images/keyboard.jpg" alt="logo">
                         <h2>
                             Please Enter Your credentials to continue
                         </h2>

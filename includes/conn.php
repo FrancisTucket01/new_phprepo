@@ -1,14 +1,14 @@
 <?php
 
-$servername = "remotemysql.com";
-$username = "UtGp1ssC6O";
-$password = "Yk917zbTBf";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "UtGp1ssC6O";
 
-// $servername = "127.0.0.1";
-// $username = "francis";
-// $password = "francis";
-// $dbname = "infinitecomputing";
+// $servername = "remotemysql.com";
+// $username = "UtGp1ssC6O";
+// $password = "2e3pUyEXs9";
+// $dbname = "UtGp1ssC6O";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection

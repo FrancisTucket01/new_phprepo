@@ -2,7 +2,6 @@
 
 require("includes/conn.php");
 
-require("includes/variables.php");
 $username = $_COOKIE['uname'];
 
 if ($_COOKIE["status"] != md5("true")){
@@ -17,6 +16,7 @@ $balance = $row['balance'];
 ?>
 
        
+<?php require('includes/userdata.php'); ?>
 <?php require("includes/header.php"); ?>
 <?php require("includes/messages.php"); ?>
         <div class="content">
@@ -41,16 +41,17 @@ $balance = $row['balance'];
                     echo "<div class='prod-desc'><p>$pname</p></div><br>";
                     echo "<div class='prod-desc'>";
                     echo "$pdesc<br>";
-                    echo "Price : Ksh$pprice<br>";
+                    echo "Price :USD $pprice<br>";
                     if ($pavail == 1){
                         echo "Availability : Available<br>";
                     }else{
                         echo "Availability  : Not Available<br>";
                     }
+                    echo "</div>";
                     echo "<div class='actions'>";
                     echo "<a href='/addcart.php?code=$pbarcode&uname=$username'>Add to Cart</a>";
                     echo "<a href='/purchase.php?code=$pbarcode&uname=$username'>Purchase</a>";
-                    echo "</div>";
+                    
                     echo "</div>";
                     
                     echo "</div>";
