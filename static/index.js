@@ -3,7 +3,6 @@ const btnNext = document.getElementById('next');
 let clickCounter = 0;
 const itemcount = document.querySelectorAll('.home-item').length;
 const width = window.innerWidth;
-console.log(Math.floor(width / 180));
 btnPrev.addEventListener("click", () => {
     const targetElement = document.getElementById("toscroll");
     if (clickCounter != 0 && clickCounter > 0) {
