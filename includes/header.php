@@ -33,7 +33,7 @@
                                 <a href="/arena.php" class="nav-toggled-a">Market</a>
                                 <a href="/cart.php" class="nav-toggled-a">Cart</a>
                                 <a href="/About.php" class="nav-toggled-a">About Us</a>
-                                <a href="/profile?uname=<?php echo $uname; ?>" class="nav-toggled-a">Profile</a>
+                                <a href="/development.php" class="nav-toggled-a">Profile</a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                         <div class='hr'></div>
                                         <div class='profile-content-body'>
                                             <ul>
-                                                <a href='/profile?uname=$uname'><li>Profile</li></a>
+                                                <a href='development.php'><li>Profile</li></a>
                                                 <a id='theme'><li>Theme</li></a>
                                                 <a href='/logout.php'><li>Logout</li></a>
                                             </ul>
